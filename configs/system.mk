@@ -22,7 +22,7 @@ PRODUCT_COPY_FILES += \
 
 # init.d script support
 PRODUCT_COPY_FILES += \
-    vendor/$(VENDOR)/prebuilt/bin/sysinit:system/bin/sysinit 
+    vendor/$(VENDOR)/prebuilt/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
@@ -58,3 +58,4 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware.xml
 
 $(call inherit-product, vendor/psd/configs/psd_board.mk)
+$(call inherit-product, vendor/psd/configs/psd_overrides.mk)

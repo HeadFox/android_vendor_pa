@@ -28,6 +28,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/aospal/products/aospal_toroplus.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_toroplus
 PRODUCT_BRAND := Google

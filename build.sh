@@ -40,15 +40,26 @@ DEVICE="$1"
 EXTRAS="$2"
 
 # Get build version
-MAJOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAJOR := *' | sed  's/ROM_VERSION_MAJOR := //g')
-MINOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MINOR := *' | sed  's/ROM_VERSION_MINOR := //g')
-MAINTENANCE=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAINTENANCE := *' | sed  's/ROM_VERSION_MAINTENANCE := //g')
-TAG=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_TAG := *' | sed  's/ROM_VERSION_TAG := //g')
+PA_MAJOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAJOR := *' | sed  's/ROM_VERSION_MAJOR := //g')
+PA_MINOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MINOR := *' | sed  's/ROM_VERSION_MINOR := //g')
+PA_MAINTENANCE=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAINTENANCE := *' | sed  's/ROM_VERSION_MAINTENANCE := //g')
+PA_TAG=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_TAG := *' | sed  's/ROM_VERSION_TAG := //g')
 
-if [ -n "$TAG" ]; then
+PSD_MAJOR=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MAJOR := *' | sed  's/PSD_VERSION_MAJOR := //g')
+PSD_MINOR=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MINOR := *' | sed  's/PSD_VERSION_MINOR := //g')
+PSD_MAINTENANCE=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MAINTENANCE := *' | sed  's/PSD_VERSION_MAINTENANCE := //g')
+PSD_TAG=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_TAG := *' | sed  's/PSD_VERSION_TAG := //g')
+
+if [ -n "$PA_TAG" ]; then
         VERSION=$MAJOR.$MINOR$MAINTENANCE-$TAG
 else
         VERSION=$MAJOR.$MINOR$MAINTENANCE
+fi
+
+if [ -n "$PSD_TAG" ]; then
+        PSD_VERSION=$MAJOR.$MINOR$MAINTENANCE-$TAG
+else
+        PSD_VERSION=$MAJOR.$MINOR$MAINTENANCE
 fi
 
 # If there is no extra parameter, reduce parameters index by 1

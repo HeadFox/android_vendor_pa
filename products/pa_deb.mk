@@ -27,6 +27,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/asus/deb/full_deb.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_deb.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_deb
 PRODUCT_BRAND := Google

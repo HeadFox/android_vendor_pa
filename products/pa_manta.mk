@@ -27,6 +27,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_manta.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_manta
 PRODUCT_BRAND := google

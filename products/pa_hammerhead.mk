@@ -28,6 +28,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_hammerhead.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_hammerhead
 PRODUCT_BRAND := Google

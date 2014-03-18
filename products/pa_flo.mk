@@ -27,6 +27,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/asus/flo/full_flo.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_flo.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_flo
 PRODUCT_BRAND := Google

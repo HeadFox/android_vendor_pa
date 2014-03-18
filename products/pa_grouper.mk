@@ -27,6 +27,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/asus/grouper/full_grouper.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_grouper.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_grouper
 PRODUCT_BRAND := Google

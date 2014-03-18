@@ -28,6 +28,9 @@ include vendor/pa/main.mk
 # Inherit AOSP device configuration
 $(call inherit-product, device/lge/mako/full_mako.mk)
 
+# Inherit PSD device product
+$(call inherit-product, vendor/psd/products/psd_mako.mk)
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_mako
 PRODUCT_BRAND := Google
