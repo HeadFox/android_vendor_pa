@@ -29,7 +29,7 @@ include vendor/pa/main.mk
 $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 
 # Inherit PSD device product
-$(call inherit-product, vendor/aospal/products/aospal_toroplus.mk)
+$(call inherit-product, vendor/psd/products/psd_toroplus.mk)
 
 # Override AOSP build properties
 PRODUCT_NAME := pa_toroplus
