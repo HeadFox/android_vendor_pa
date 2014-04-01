@@ -51,10 +51,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# CM Hardware Abstraction Framework
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
-
 $(call inherit-product, vendor/psd/configs/psd_board.mk)
 $(call inherit-product, vendor/psd/configs/psd_overrides.mk)
