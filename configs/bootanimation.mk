@@ -22,7 +22,7 @@ ifneq ($(filter pa_n5110,$(TARGET_PRODUCT)),)
 endif
 
 # PA XXHDPI Devices
-ifneq ($(filter pa_d800 pa_d801 pa_d802 pa_d803 pa_dlx pa_hlte pa_honami pa_i9500 pa_jflte pa_ls980 pa_m7 pa_m8 pa_odin pa_vs980 pa_yuga,$(TARGET_PRODUCT)),)
+ifneq ($(filter pa_d800 pa_d801 pa_d802 pa_d803 pa_dlx pa_hlte pa_honami pa_i9500 pa_jflte pa_ls980 pa_m7 pa_m7spr pa_m7vzw pa_m8 pa_odin pa_vs980 pa_yuga,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/bootanimation/1920x1080.zip:system/media/bootanimation.zip
 endif
