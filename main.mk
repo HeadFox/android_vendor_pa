@@ -20,6 +20,7 @@ include vendor/pa/configs/system.mk
 include vendor/pa/configs/pa_overrides.mk
 include vendor/pa/configs/bootanimation.mk
 include vendor/pa/configs/version.mk
+include vendor/pa/configs/telephony.mk
 include vendor/psd/main.mk
 
 

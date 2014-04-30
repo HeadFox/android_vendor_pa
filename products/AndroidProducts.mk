@@ -51,6 +51,9 @@ endif
 ifeq (pa_falcon,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_falcon.mk
 endif
+ifeq (pa_find7a,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_find7a.mk
+endif
 ifeq (pa_flo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_flo.mk
 endif
@@ -173,6 +176,9 @@ ifeq (pa_targa,$(TARGET_PRODUCT))
 endif
 ifeq (pa_tate,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tate.mk
+endif
+ifeq (pa_tf201,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tf201.mk
 endif
 ifeq (pa_togari,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_togari.mk

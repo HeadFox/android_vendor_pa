@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2014 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
 
 # Check for target product
 
-ifeq (pa_m4,$(TARGET_PRODUCT))
+ifeq (pa_find7a,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_xxhdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -29,15 +29,16 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/htc/m4/full_m4.mk)
+$(call inherit-product, device/oppo/find7a/full_find7a.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := m4
-PRODUCT_NAME := pa_m4
-PRODUCT_BRAND := HTC
-PRODUCT_MODEL := One Mini
-PRODUCT_MANUFACTURER := HTC
+# Override AOSP build properties
+PRODUCT_NAME := pa_find7a
+PRODUCT_DEVICE := find7a
+PRODUCT_BRAND := Oppo
+PRODUCT_MODEL := Find7a
+PRODUCT_MANUFACTURER := Oppo
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m4 BUILD_FINGERPRINT="htc/htc_europe/m4:4.4.2/KOT49H/304638.4:user/release-keys" PRIVATE_BUILD_DESC="3.10.401.4 CL304638 release-keys"
+# Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=find7a TARGET_DEVICE=find7a
 
 endif

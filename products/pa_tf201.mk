@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2012 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,7 @@
 # limitations under the License.
 
 # Check for target product
-
-ifeq (pa_m4,$(TARGET_PRODUCT))
+ifeq (pa_tf201,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := pa_xhdpi
@@ -22,22 +21,18 @@ OVERLAY_TARGET := pa_xhdpi
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
 
-# Inherit telephony common stuff
-$(call inherit-product, vendor/pa/configs/telephony.mk)
-
-# Include AOSPA common configuration
+# Include ParanoidAndroid common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/htc/m4/full_m4.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/asus/tf201/full_tf201.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := m4
-PRODUCT_NAME := pa_m4
-PRODUCT_BRAND := HTC
-PRODUCT_MODEL := One Mini
-PRODUCT_MANUFACTURER := HTC
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m4 BUILD_FINGERPRINT="htc/htc_europe/m4:4.4.2/KOT49H/304638.4:user/release-keys" PRIVATE_BUILD_DESC="3.10.401.4 CL304638 release-keys"
+# Override AOSP build properties
+PRODUCT_NAME := pa_tf201
+PRODUCT_BRAND := Asus
+PRODUCT_MODEL := Transformer Prime
+PRODUCT_MANUFACTURER := Asus
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=tf201 BUILD_FINGERPRINT=asus/US_epad/EeePad:4.1.1/JRO03C/US_epad-10.4.2.18-20121122:user/release-keys PRIVATE_BUILD_DESC="US_epad-user 4.1.1 JRO03C US_epad-10.4.2.18-20121122 release-keys"
 
 endif
+
