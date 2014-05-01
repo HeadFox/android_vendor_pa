@@ -14,12 +14,11 @@
 
 # Check for target product
 
-ifeq (pa_d803,$(TARGET_PRODUCT))
+ifeq (pa_i9100g,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_g2
+OVERLAY_TARGET := pa_hdpi
 
-# Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
 
 # Inherit telephony common stuff
@@ -28,19 +27,16 @@ $(call inherit-product, vendor/pa/configs/telephony.mk)
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
-# Inherit PSD device product
-$(call inherit-product, vendor/psd/products/psd_d803.mk)
-
 # Inherit device configuration
-$(call inherit-product, device/lge/d803/d803.mk)
+$(call inherit-product, device/samsung/i9100g/full_i9100g.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := d803
-PRODUCT_NAME := pa_d803
-PRODUCT_BRAND := LGE
-PRODUCT_MODEL := LG-D803
-PRODUCT_MANUFACTURER := lge
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=d803 BUILD_FINGERPRINT=lge/g2_ca/g2:4.4.2/KOT49I.D803B20e/D803B20e.1394602420:user/release-keys PRIVATE_BUILD_DESC="g2_ca-user 4.4.2 KOT49I.D803B20e D803B20e.1394602420 release-keys"
+# Override AOSP build properties
+PRODUCT_NAME := pa_i9100g
+PRODUCT_DEVICE := i9100g
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := GT-I9100G
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=GT-I9100G TARGET_DEVICE=GT-I9100G BUILD_FINGERPRINT=samsung/GT-I9100G/GT-I9100G:4.1.2/JZO54K/I9100GXXLSR:user/release-keys PRIVATE_BUILD_DESC="GT-I9100G-user 4.1.2 JZO54K I9100GXXLSR release-keys"
 
 endif
