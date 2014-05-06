@@ -1,4 +1,4 @@
-# Copyright (C) 2014 ParanoidAndroid Project
+# Copyright (C) 2013 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,10 +13,11 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_odin,$(TARGET_PRODUCT))
+
+ifeq (pa_ville,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_hdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -24,21 +25,20 @@ PREFS_FROM_SOURCE ?= false
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
 
-# Inherit extra tools
-$(call inherit-product, vendor/pa/configs/extra_tools.mk)
-
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
 # Inherit device configuration
-$(call inherit-product, device/sony/odin/full_odin.mk)
+$(call inherit-product, device/htc/ville/pa_ville.mk)
 
-# Override AOSP build properties
-PRODUCT_NAME := pa_odin
-PRODUCT_DEVICE := odin
-PRODUCT_BRAND := sony
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_MODEL := Xperia ZL
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=C6503 TARGET_DEVICE=odin BUILD_FINGERPRINT=Sony/C6503_1271-0336/C6503:4.2.2/10.3.A.0.423/WP5_rg:user/release-keys PRIVATE_BUILD_DESC="C6503-user 4.2.2 10.3.A.0.423 WP5_rg test-keys"
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := ville
+PRODUCT_NAME := pa_ville
+PRODUCT_BRAND := HTC
+PRODUCT_MODEL := One S
+PRODUCT_MANUFACTURER := HTC
+
+# Set build fingerprint / ID / Product Name etc.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_ville BUILD_FINGERPRINT=cingular_us/ville/ville:4.1.1/JRO03C/131981.6:user/release-keys PRIVATE_BUILD_DESC="3.18.502.6 CL131981 release-keys" BUILD_NUMBER=79936
     
 endif

@@ -1,4 +1,4 @@
-# Copyright (C) 2014 ParanoidAndroid Project
+# Copyright (C) 2013 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_odin,$(TARGET_PRODUCT))
+ifeq (pa_i9082,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_hdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
@@ -24,21 +24,18 @@ PREFS_FROM_SOURCE ?= false
 # Inherit telephony common stuff
 $(call inherit-product, vendor/pa/configs/telephony.mk)
 
-# Inherit extra tools
-$(call inherit-product, vendor/pa/configs/extra_tools.mk)
-
-# Include AOSPA common configuration
+# Include ParanoidAndroid common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/sony/odin/full_odin.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/samsung/i9082/full_i9082.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_odin
-PRODUCT_DEVICE := odin
-PRODUCT_BRAND := sony
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_MODEL := Xperia ZL
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=C6503 TARGET_DEVICE=odin BUILD_FINGERPRINT=Sony/C6503_1271-0336/C6503:4.2.2/10.3.A.0.423/WP5_rg:user/release-keys PRIVATE_BUILD_DESC="C6503-user 4.2.2 10.3.A.0.423 WP5_rg test-keys"
-    
+PRODUCT_NAME := pa_i9082
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := GT-I9082
+
+#Set build fingerprint / ID / Prduct Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=baffinvj TARGET_DEVICE=baffin BUILD_FINGERPRINT=samsung/baffinvj/baffin:4.1.2/JZO54K/I9082LDCAMC2:user/release-keys PRIVATE_BUILD_DESC="baffinvj-user 4.1.2 JZO54K I9082LDCAMC2 release-keys"
 endif

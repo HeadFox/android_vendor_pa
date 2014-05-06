@@ -1,4 +1,4 @@
-# Copyright (C) 2014 ParanoidAndroid Project
+# Copyright (C) 2012 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,36 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Check for target product
-
-ifeq (pa_find7a,$(TARGET_PRODUCT))
-
-# OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xxhdpi
-
+ifeq (pa_p3110,$(TARGET_PRODUCT))
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
-
-# Inherit telephony common stuff
-$(call inherit-product, vendor/pa/configs/telephony.mk)
-
-# Inherit extra tools
-$(call inherit-product, vendor/pa/configs/extra_tools.mk)
 
 # Include AOSPA common configuration
 include vendor/pa/main.mk
 
-# Inherit device configuration
-$(call inherit-product, device/oppo/find7a/full_find7a.mk)
+# Inherit AOSP device configuration
+$(call inherit-product, device/samsung/p3110/full_p3110.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_find7a
-PRODUCT_DEVICE := find7a
-PRODUCT_BRAND := Oppo
-PRODUCT_MODEL := Find7a
-PRODUCT_MANUFACTURER := Oppo
+PRODUCT_NAME := pa_p3110
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := GT-P3110
+PRODUCT_MANUFACTURER := samsung
+#Set build fingerprint / ID / Prduct Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=espressowifixx \
+    TARGET_DEVICE=espressowifi \
+    BUILD_FINGERPRINT="samsung/espressowifixx/espressowifi:4.2.2/JDQ39/P3110XXDMH1:user/release-keys" \
+    PRIVATE_BUILD_DESC="espressowifixx-user 4.2.2 JDQ39 P3110XXDMH1 release-keys"
 
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=find7a TARGET_DEVICE=find7a
-
+PRODUCT_RELEASE_NAME := GT-P3110
 endif
