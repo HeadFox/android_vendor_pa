@@ -42,12 +42,6 @@ PRODUCT_PACKAGES := \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1 \
     persist.sys.root_access=3
-
-# CM Hardware Abstraction Framework
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
 
 $(call inherit-product, vendor/psd/configs/psd_board.mk)

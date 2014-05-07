@@ -1,4 +1,4 @@
-# Copyright (C) 2013 ParanoidAndroid Project
+# Copyright (C) 2014 ParanoidAndroid Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,24 +17,28 @@
 ifeq (pa_m8,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_xxhdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= false
 
-# Include ParanoidAndroid common configuration
+# Inherit telephony common stuff
+$(call inherit-product, vendor/pa/configs/telephony.mk)
+
+# Include AOSPA common configuration
 include vendor/pa/main.mk
 
-# Inherit AOSP device configuration
+# Inherit device configuration
 $(call inherit-product, device/htc/m8/full_m8.mk)
-
-# Inherit PSD device product
-$(call inherit-product, vendor/psd/products/psd_m8.mk)
 
 # Override AOSP build properties
 PRODUCT_NAME := pa_m8
-PRODUCT_BRAND := HTC
-PRODUCT_MODEL := HTC-M8
-PRODUCT_MANUFACTURER := HTC
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc BUILD_FINGERPRINT="htc/m8_jesco/m8:4.4.2/KOT49H/937116:user/release-keys" PRIVATE_BUILD_DESC="m8-user 4.4.2 KOT49H 937116 release-keys"
+PRODUCT_DEVICE := m8
+PRODUCT_BRAND := htc
+PRODUCT_MANUFACTURER := htc
+PRODUCT_MODEL := m8
 
+# Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m8 TARGET_DEVICE=m8
+
+endif
