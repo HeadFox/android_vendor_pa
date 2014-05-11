@@ -58,6 +58,7 @@ add_lunch_combo pa_serrano3gxx-userdebug
 add_lunch_combo pa_serranoltexx-userdebug
 add_lunch_combo pa_skyrocket-userdebug
 add_lunch_combo pa_spyder-userdebug
+add_lunch_combo pa_taoshan-userdebug
 add_lunch_combo pa_targa-userdebug
 add_lunch_combo pa_tate-userdebug
 add_lunch_combo pa_tf201-userdebug
@@ -112,6 +113,7 @@ add_lunch_combo pa_nozomi-user
 add_lunch_combo pa_odin-user
 add_lunch_combo pa_p880-user
 add_lunch_combo pa_skyrocket-user
+add_lunch_combo pa_taoshan-user
 add_lunch_combo pa_tate-user
 add_lunch_combo pa_togari-user
 add_lunch_combo pa_v500-user
