@@ -31,7 +31,7 @@ include vendor/pa/main.mk
 $(call inherit-product, vendor/psd/products/psd_taoshan.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/sony/taoshan/full_taoshan.mk)
+$(call inherit-product, device/sony/taoshan/taoshan.mk)
 
 # Override AOSP build properties
 PRODUCT_NAME := pa_taoshan
