@@ -33,6 +33,10 @@ $(call inherit-product, vendor/psd/products/psd_taoshan.mk)
 # Inherit device configuration
 $(call inherit-product, device/sony/taoshan/taoshan.mk)
 
+# Screen resoultion in Pixels.
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
+
 # Override AOSP build properties
 PRODUCT_NAME := pa_taoshan
 PRODUCT_DEVICE := taoshan
