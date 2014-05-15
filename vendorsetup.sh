@@ -69,6 +69,7 @@ add_lunch_combo pa_v500-userdebug
 add_lunch_combo pa_ville-userdebug
 add_lunch_combo pa_vs980-userdebug
 add_lunch_combo pa_yuga-userdebug
+add_lunch_combo pa_haida-userdebug
 
 # Odex
 add_lunch_combo pa_a510-user
@@ -120,3 +121,4 @@ add_lunch_combo pa_togari-user
 add_lunch_combo pa_v500-user
 add_lunch_combo pa_vs980-user
 add_lunch_combo pa_yuga-user
+add_lunch_combo pa_haida-user
