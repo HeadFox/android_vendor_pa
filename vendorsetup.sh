@@ -17,6 +17,7 @@ add_lunch_combo pa_flo-userdebug
 add_lunch_combo pa_galaxysmtd-userdebug
 add_lunch_combo pa_gee-userdebug
 add_lunch_combo pa_geeb-userdebug
+add_lunch_combo pa_haida-userdebug
 add_lunch_combo pa_hercules-userdebug
 add_lunch_combo pa_hikari-userdebug
 add_lunch_combo pa_hlte-userdebug
@@ -86,6 +87,7 @@ add_lunch_combo pa_flo-user
 add_lunch_combo pa_galaxysmtd-user
 add_lunch_combo pa_gee-user
 add_lunch_combo pa_geeb-user
+add_lunch_combo pa_haida-user
 add_lunch_combo pa_hercules-user
 add_lunch_combo pa_hikari-user
 add_lunch_combo pa_hlte-user
