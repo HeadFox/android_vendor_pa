@@ -48,7 +48,7 @@ PA_TAG=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_TAG := *' | sed  's/RO
 PSD_MAJOR=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MAJOR := *' | sed  's/PSD_VERSION_MAJOR := //g')
 PSD_MINOR=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MINOR := *' | sed  's/PSD_VERSION_MINOR := //g')
 PSD_MAINTENANCE=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_MAINTENANCE := *' | sed  's/PSD_VERSION_MAINTENANCE := //g')
-PSD_TAG=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_VERSION_TAG := *' | sed  's/PSD_VERSION_TAG := //g')
+PSD_TAG=$(cat $DIR/vendor/psd/vendor.mk | grep 'PSD_TYPE := *' | sed  's/PSD_TYPE := //g')
 
 if [ -n "$PA_TAG" ]; then
         VERSION=$MAJOR.$MINOR$MAINTENANCE-$TAG
@@ -57,9 +57,9 @@ else
 fi
 
 if [ -n "$PSD_TAG" ]; then
-        PSD_VERSION=$MAJOR.$MINOR$MAINTENANCE-$TAG
+        PSD_VERSION=$PSD_MAINTENANCE-$PSD_TAG-$PSD_MAJOR.$PSD_MINOR
 else
-        PSD_VERSION=$MAJOR.$MINOR$MAINTENANCE
+        PSD_VERSION=$PSD_MAINTENANCE-$PSD_MAJOR.$PSD_MINOR
 fi
 
 # If there is no extra parameter, reduce parameters index by 1
