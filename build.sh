@@ -77,7 +77,7 @@ fi
 # Get start time
 res1=$(date +%s.%N)
 
-echo -e "${cya}Building ${bldcya}AOSPA $VERSION for $DEVICE ${txtrst}";
+echo -e "${cya}Building ${bldcya}AOSPAL $PSD_TAG $PSD_MAJOR.$PSD_MINOR for $DEVICE ${txtrst}";
 echo -e "${bldgrn}Start time: $(date) ${txtrst}"
 
 # Decide what command to execute
